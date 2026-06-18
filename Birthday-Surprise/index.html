@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no" />
+<title>Happy Birthday, Faruha 🎂💖</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Animated background layers, shared across all sections -->
+  <div class="bg-gradient"></div>
+  <div class="bg-glow glow-1"></div>
+  <div class="bg-glow glow-2"></div>
+  <div class="bg-glow glow-3"></div>
+
+  <!-- Containers that get populated with JS-generated floating hearts / sparkles -->
+  <div class="hearts-layer" id="heartsLayer"></div>
+  <div class="sparkles-layer" id="sparklesLayer"></div>
+
+  <!-- Canvas used for the confetti burst -->
+  <canvas id="confettiCanvas"></canvas>
+
+  <!-- Hidden audio element, loaded once -->
+  <audio id="bgMusic" src="music/birthday.mp3" loop preload="auto"></audio>
+
+  <main id="app">
+
+    <!-- ============== SECTION 1 — LANDING ============== -->
+    <section class="screen" id="screen1" data-active="true">
+      <div class="stickers stickers-1" aria-hidden="true">
+        <span class="sticker s-flower">🌸</span>
+        <span class="sticker s-bow">🎀</span>
+        <span class="sticker s-star">✨</span>
+        <span class="sticker s-butterfly">🦋</span>
+        <span class="sticker s-teddy">🧸</span>
+        <span class="sticker s-star2">⭐</span>
+      </div>
+
+      <div class="cake-wrap" aria-hidden="true">
+        <div class="cake">
+          <div class="cake-candle">
+            <div class="flame"></div>
+          </div>
+          <div class="cake-top"></div>
+          <div class="cake-icing"></div>
+          <div class="cake-layer cake-layer--mid"></div>
+          <div class="cake-layer cake-layer--base"></div>
+          <div class="cake-sparkle cake-sparkle--a">✦</div>
+          <div class="cake-sparkle cake-sparkle--b">✦</div>
+          <div class="cake-sparkle cake-sparkle--c">✦</div>
+        </div>
+      </div>
+
+      <div class="content-card landing-card">
+        <p class="eyebrow">a little something for</p>
+        <h1 class="landing-title">I wish you had the prettiest birthday ever. 🎂💖</h1>
+        <button class="btn btn-primary" id="startBtn">
+          <span>Click here, Faruha 🌸</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ============== SECTION 2 — QUESTION ============== -->
+    <section class="screen" id="screen2" data-active="false">
+      <div class="stickers stickers-2" aria-hidden="true">
+        <span class="sticker s-flower">🌸</span>
+        <span class="sticker s-star">✨</span>
+        <span class="sticker s-bow">🎀</span>
+      </div>
+
+      <div class="content-card question-card">
+        <div class="cover-frame">
+          <img src="images/cover.jpg" alt="A cherished photo of Faruha" class="cover-img" id="coverImg" />
+        </div>
+
+        <h2 class="question-text">Who do you think is the prettiest, smartest, kindest, and most wonderful girl in the whole world? 💖</h2>
+
+        <p class="result-message" id="resultMessage" aria-live="polite"></p>
+
+        <div class="buttons-row" id="buttonsRow">
+          <button class="btn btn-primary" id="faruhaBtn">🌸 Faruha</button>
+          <button class="btn btn-secondary runaway-btn" id="otherBtn">🤔 Any other girl</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== SECTION 3 — FINAL MEMORIES ============== -->
+    <section class="screen" id="screen3" data-active="false">
+      <div class="stickers stickers-3" aria-hidden="true">
+        <span class="sticker s-flower">🌸</span>
+        <span class="sticker s-bow">🎀</span>
+        <span class="sticker s-butterfly">🦋</span>
+        <span class="sticker s-teddy">🧸</span>
+        <span class="sticker s-star">⭐</span>
+        <span class="sticker s-star2">✨</span>
+      </div>
+
+      <div class="content-card finale-card">
+        <div class="slideshow" id="slideshow">
+          <div class="slide is-active" style="background-image:url('images/cover.jpg')"></div>
+          <div class="slide" style="background-image:url('images/photo1.png')"></div>
+          <div class="slide" style="background-image:url('images/photo2.png')"></div>
+          <div class="slide" style="background-image:url('images/photo3.png')"></div>
+          <div class="slide" style="background-image:url('images/photo4.png')"></div>
+        </div>
+
+        <div class="finale-text">
+          <h2 class="finale-title">Happy Birthday, Faruha! 🎂💖</h2>
+          <p>I wish you a lifetime of happiness and beautiful moments. I hope you always stay exactly the way you are, because there is something truly special about you.</p>
+          <p>Your name means joy, and honestly, you live up to it perfectly. Your presence brings happiness to our lives and to everyone lucky enough to know you.</p>
+          <p>Never change who you are, because I need you exactly as you are. 💖🌸</p>
+        </div>
+
+        <p class="signature">Made with honesty. 🌸</p>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
