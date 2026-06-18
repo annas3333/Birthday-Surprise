@@ -113,6 +113,96 @@
         </div>
 
         <p class="signature">Made with honesty. 🌸</p>
+
+        <button class="btn btn-primary special-btn" id="specialBtn">
+          <span>🌹 I Have Something Special For You</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ============== SECTION 4 — REALISTIC FLOWER BOUQUET ============== -->
+    <section class="screen" id="screen4" data-active="false">
+      <div class="stickers stickers-4" aria-hidden="true">
+        <span class="sticker s-flower">🌸</span>
+        <span class="sticker s-bow">🎀</span>
+        <span class="sticker s-star">✨</span>
+        <span class="sticker s-star2">⭐</span>
+      </div>
+
+      <div class="content-card bouquet-card">
+        <!-- SVG bouquet is injected here by buildBouquet() in script.js -->
+        <svg id="bouquetSvg" class="bouquet-scene" viewBox="0 0 380 480" xmlns="http://www.w3.org/2000/svg" aria-label="A beautiful bouquet of 20 flowers">
+          <defs>
+            <!-- Wrapping paper gradient — warm cream/rose -->
+            <linearGradient id="wrapGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%"   stop-color="#ffd6e8"/>
+              <stop offset="50%"  stop-color="#ffb3d1"/>
+              <stop offset="100%" stop-color="#e87bb0"/>
+            </linearGradient>
+            <!-- Inner shadow on wrap -->
+            <linearGradient id="wrapShade" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%"   stop-color="rgba(0,0,0,0.18)"/>
+              <stop offset="30%"  stop-color="rgba(0,0,0,0)"/>
+              <stop offset="70%"  stop-color="rgba(0,0,0,0)"/>
+              <stop offset="100%" stop-color="rgba(0,0,0,0.22)"/>
+            </linearGradient>
+            <!-- Stem gradient -->
+            <linearGradient id="stemGrad" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%"   stop-color="#2e7d32"/>
+              <stop offset="50%"  stop-color="#4caf50"/>
+              <stop offset="100%" stop-color="#1b5e20"/>
+            </linearGradient>
+            <!-- Leaf gradient -->
+            <linearGradient id="leafGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%"   stop-color="#66bb6a"/>
+              <stop offset="100%" stop-color="#2e7d32"/>
+            </linearGradient>
+            <!-- Glow filter -->
+            <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+              <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur"/>
+              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+            <!-- Drop shadow for wrap -->
+            <filter id="wrapShadow" x="-10%" y="-5%" width="120%" height="120%">
+              <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="rgba(0,0,0,0.4)"/>
+            </filter>
+          </defs>
+
+          <!-- ── STEMS GROUP ── -->
+          <g id="stemsGroup"></g>
+
+          <!-- ── LEAVES GROUP ── -->
+          <g id="leavesGroup"></g>
+
+          <!-- ── WRAPPING PAPER ── -->
+          <g id="wrapGroup">
+            <!-- Main cone shape -->
+            <path id="wrapCone" d="M155,310 L130,470 L250,470 L225,310 Z"
+                  fill="url(#wrapGrad)" filter="url(#wrapShadow)"/>
+            <!-- Crinkle shading -->
+            <path d="M155,310 L130,470 L250,470 L225,310 Z"
+                  fill="url(#wrapShade)"/>
+            <!-- Decorative diagonal stripe on wrap -->
+            <line x1="148" y1="340" x2="138" y2="430" stroke="rgba(255,255,255,0.35)" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="168" y1="318" x2="148" y2="460" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="205" y1="315" x2="228" y2="455" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" stroke-linecap="round"/>
+            <!-- Ribbon tie at top of wrap -->
+            <ellipse cx="190" cy="314" rx="36" ry="9"
+                     fill="#e91e8c" opacity="0.85"/>
+            <!-- Ribbon bow loops -->
+            <path d="M154,310 Q140,290 158,282 Q172,276 175,300 Z"
+                  fill="#f06292" opacity="0.9"/>
+            <path d="M226,310 Q240,290 222,282 Q208,276 205,300 Z"
+                  fill="#f06292" opacity="0.9"/>
+            <!-- Ribbon bow knot -->
+            <ellipse cx="190" cy="305" rx="10" ry="8" fill="#e91e8c"/>
+          </g>
+
+          <!-- ── FLOWERS GROUP (JS populates) ── -->
+          <g id="flowersGroup"></g>
+        </svg>
+
+        <p class="bouquet-caption" id="bouquetCaption">20 flowers for 20 beautiful years. 🌹💖</p>
       </div>
     </section>
 
